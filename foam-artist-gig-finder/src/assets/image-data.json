@@ -1,0 +1,120 @@
+[
+    {
+      "major": "Illustration",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img1.jpeg",
+      "title": "Untitled",
+      "artist": "Harold Ancart",
+      "index": 0
+    },
+    {
+      "major": "Apparel",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img2.jpeg",
+      "title": "Skirt",
+      "artist": "Bianca Smith",
+      "index": 1
+    },
+    {
+      "major": "Illustration",
+      "location": "Providence",
+      "availability": "Available Soon",
+      "image": "assets/img3.jpeg",
+      "title": "People Walking",
+      "artist": "Amy Bloom",
+      "index": 2
+    },
+    {
+      "major": "Photography",
+      "location": "Providence",
+      "availability": "Not Available",
+      "image": "assets/img4.jpeg",
+      "title": "Untitled",
+      "artist": "Hector Hawke",
+      "index": 3
+    },
+    {
+      "major": "Illustration",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img5.jpeg",
+      "title": "Ache the Good Ache",
+      "artist": "Alasdair Wallace",
+      "index": 4
+    },
+    {
+      "major": "Furniture",
+      "location": "Providence",
+      "availability": "Available Soon",
+      "image": "assets/img6.jpeg",
+      "title": "LightBox",
+      "artist": "Elliot Tank",
+      "index": 5
+    },
+    {
+      "major": "Painting",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img7.jpeg",
+      "title": "Farmhouse",
+      "artist": "Damien Jackson",
+      "index": 6
+    },
+    {
+      "major": "Furniture",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img8.jpeg",
+      "title": "Candles",
+      "artist": "Nicholas Devlin",
+      "index": 7
+    },
+    {
+      "major": "Apparel",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img9.jpeg",
+      "title": "Sweater",
+      "artist": "Floria Chen",
+      "index": 8
+    },
+    {
+      "major": "Sculpture",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img10.jpeg",
+      "title": "Light",
+      "artist": "Aaron McRandy",
+      "index": 9
+    },
+    {
+      "major": "Painting",
+      "location": "Providence",
+      "availability": "Available Now",
+      "image": "assets/img11.jpeg",
+      "title": "Midnight Grocery",
+      "artist": "Danny Lai Lai",
+      "index": 10
+    },
+    {
+      "major": "Furniture",
+      "location": "Providence",
+      "availability": "Not Available",
+      "image": "assets/img12.jpeg",
+      "title": "Shoes",
+      "artist": "Rebecca Showman",
+      "index": 11
+    },
+    {
+      "major": "Jewelry",
+      "location": "Providence",
+      "availability": "Not Available",
+      "image": "assets/img13.jpeg",
+      "title": "Home Goods",
+      "artist": "Caitlin Mociun",
+      "index": 12
+    }
+  ]
+  
