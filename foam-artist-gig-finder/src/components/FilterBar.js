@@ -8,16 +8,25 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
   const [showMajorDropdown, setShowMajorDropdown] = useState(false);
   const [showLocationDropdown, setShowLocationDropdown] = useState(false);
   const [showAvailabilityDropdown, setShowAvailabilityDropdown] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
 
   const toggleMajorDropdown = () => {
     setShowMajorDropdown(!showMajorDropdown);
   };
+
   const toggleLocationDropdown = () => {
     setShowLocationDropdown(!showLocationDropdown);
   };
+
   const toggleAvailabilityDropdown = () => {
     setShowAvailabilityDropdown(!showAvailabilityDropdown);
   };
+
+  const resetSelection = () => {
+    setIsClicked(true);
+    setSelectedItems(['FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
+  }
 
 
   return (
@@ -33,7 +42,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
             </div>
             {showMajorDropdown && (
                 <div className="dropdown-menu">
-                    {['FAV', 'Ceramics', 'Illustration', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design"].map((option) => (
+                    {['FAV', 'Ceramics', 'Illustration', 'Sculpture', 'Painting', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design"].map((option) => (
                     <label key={option}>
                         <input
                         type="checkbox"
@@ -94,6 +103,13 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
                 </div>
             )}
        </div>
+
+       <div onClick={resetSelection}>
+            <div className="button-content">
+                <p1 className="underline-text grey-text">Reset All</p1>
+            </div>
+        </div>
+
     </div>
   );
 };

@@ -6,15 +6,45 @@ import likedIcon from '../assets/liked_icon.png';
 const Card = (props) => {
 
   const [showLikeButton, setShowLikeButton] = useState(false);
-  const [liked, setLiked] = useState(false);
+//   const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(props.item.liked);
 
   const handleLike = () =>{
-    setLiked(!liked);
-  }
+    const newLikedState = !liked;
+    setLiked(newLikedState);
+
+    if (newLikedState) {
+      props.addToCart({ ...props.item, liked: true });
+    }
+    else{
+      props.removeFromCart(props.item.index);
+    }
+  };
+
+    // setLiked(!liked);
+    // if (!liked) {
+    //     // TODO: when adding props.item here, you want to make sure that the like buton is selected and red
+    //     props.addToCart({...props.item, liked: true}); 
+    //   }
+//   }
 
   const handleDoubleClick = () => {
-    setLiked(!liked);
+    const newLikedState = !liked;
+    setLiked(newLikedState);
+
+    if (newLikedState) {
+      props.addToCart({ ...props.item, liked: true });
+    }
+    else{
+        props.removeFromCart(props.item.index);
+    }
   };
+
+    // setLiked(!liked);
+    // if (!liked) {
+    //     props.addToCart({...props.item, liked: true});
+    //   }
+//   };
 
   const handleImageLoad = (e) => {
     const img = e.target;

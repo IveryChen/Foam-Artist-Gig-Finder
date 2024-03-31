@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import imageData from "../assets/image-data.json";
   
-const MainPage = ({selectedItems, addToCart, cart, removeFromCart}) => {
+const LikePage = ({selectedItems, addToCart, cart, removeFromCart}) => {
 
     const [images, setImages] = useState([]);
 
@@ -16,7 +16,7 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart}) => {
       });
     }, []);
 
-    const filteredImageData = imageData.filter(item => {
+    const filteredImageData = cart.filter(item => {
         return (
           selectedItems.includes(item.major) &&
           selectedItems.includes(item.location) &&
@@ -45,4 +45,4 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart}) => {
   );
 };
 
-export default MainPage;
+export default LikePage;
