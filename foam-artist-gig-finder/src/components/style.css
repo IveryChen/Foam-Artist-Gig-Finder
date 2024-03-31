@@ -22,6 +22,11 @@
     font-size: 10px;
   }
 
+  .italics{
+    font-style: italic;
+    color: rgb(102, 102, 102);
+  }
+
   .heading{
     font-size:40px;
     font-weight: bold;
@@ -39,7 +44,7 @@
   }
   
   .logo{
-    font-size: 24px;
+    font-size: 48px;
     font-family: 'DM Sans', sans-serif;
     font-weight:bold;
   }
@@ -59,7 +64,7 @@
     border-radius: 18px;
     align-items: center;
     width: 100%;
-    height: 40px;
+    height: 60px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -88,8 +93,8 @@
   }
 
   .icons img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-left: 30px;
     cursor: pointer;
   }
@@ -106,7 +111,7 @@
   }
 
   .filter-bar > * {
-    margin: 30px 40px; 
+    margin: 30px 30px; 
   }
 
   .button-frame {
@@ -227,9 +232,11 @@
 }
 
 .dropdown-container{
+    width:130px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    position: relative;
 }
 
 .dropdown-menu {

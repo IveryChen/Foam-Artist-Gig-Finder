@@ -25,9 +25,57 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
 
   const resetSelection = () => {
     setIsClicked(true);
-    setSelectedItems(['FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
+    setSelectedItems(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
   }
 
+  const majorOptions = ['All Majors', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design"];
+  const locationOptions = ['All Locations', 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago'];
+  const availabilityOptions = ['All Availability', 'Available Now', 'Available Soon', 'Not Available'];
+
+  const handleMajorSelection = (option) => {
+    if (option === 'All Majors') {
+      if (!selectedItems.includes('All Majors')) {
+        setSelectedItems([...selectedItems, ...majorOptions]);
+      } else {
+        setSelectedItems(selectedItems.filter(item => !majorOptions.includes(item)));
+    }
+    } else {
+      const updatedSelection = selectedItems.includes(option)
+        ? selectedItems.filter(item => item !== option)
+        : [...selectedItems, option];
+      setSelectedItems(updatedSelection);
+    }
+  };
+
+  const handleLocationSelection = (option) => {
+    if (option === 'All Locations') {
+        if (!selectedItems.includes('All Locations')) {
+            setSelectedItems([...selectedItems, ...locationOptions]);
+        } else {
+            setSelectedItems(selectedItems.filter(item => !locationOptions.includes(item)));
+        }
+        } else {
+        const updatedSelection = selectedItems.includes(option)
+            ? selectedItems.filter(item => item !== option)
+            : [...selectedItems, option];
+        setSelectedItems(updatedSelection);
+        }  
+    };
+
+  const handleAvailabilitySelection = (option) => {
+    if (option === 'All Availability') {
+        if (!selectedItems.includes('All Availability')) {
+          setSelectedItems([...selectedItems, ...availabilityOptions]);
+        } else {
+            setSelectedItems(selectedItems.filter(item => !availabilityOptions.includes(item)));
+        }
+      } else {
+        const updatedSelection = selectedItems.includes(option)
+          ? selectedItems.filter(item => item !== option)
+          : [...selectedItems, option];
+        setSelectedItems(updatedSelection);
+      }  
+    };
 
   return (
     <div className="filter-bar">
@@ -42,12 +90,12 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
             </div>
             {showMajorDropdown && (
                 <div className="dropdown-menu">
-                    {['FAV', 'Ceramics', 'Illustration', 'Sculpture', 'Painting', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design"].map((option) => (
+                    {['All Majors', 'FAV', 'Ceramics', 'Illustration', 'Sculpture', 'Painting', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design"].map((option) => (
                     <label key={option}>
                         <input
                         type="checkbox"
                         checked={selectedItems.includes(option)}
-                        onChange={() => handleItemClick(option)}
+                        onChange={() => handleMajorSelection(option)}
                         />
                         {option}
                     </label>
@@ -65,12 +113,12 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
             </div>
             {showLocationDropdown && (
                         <div className="dropdown-menu">
-                            {['Providence', 'Boston', 'New York', 'Los Angeles', 'Chicago'].map((option) => (
+                            {['All Locations', 'Providence', 'Boston', 'New York', 'Los Angeles', 'Chicago'].map((option) => (
                             <label key={option}>
                                 <input
                                 type="checkbox"
                                 checked={selectedItems.includes(option)}
-                                onChange={() => handleItemClick(option)}
+                                onChange={() => handleLocationSelection(option)}
                                 />
                                 {option}
                             </label>
@@ -90,12 +138,12 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
             </div>
             {showAvailabilityDropdown && (
                 <div className="dropdown-menu">
-                    {['Available Now', 'Available Soon', 'Not Available'].map((option) => (
+                    {['All Availability', 'Available Now', 'Available Soon', 'Not Available'].map((option) => (
                     <label key={option}>
                     <input
                     type="checkbox"
                     checked={selectedItems.includes(option)}
-                    onChange={() => handleItemClick(option)}
+                    onChange={() => handleAvailabilitySelection(option)}
                     />
                     {option}
                     </label>

@@ -50,7 +50,9 @@ const Card = (props) => {
   };
 
   const handleMouseLeave = () => {
-    setShowLikeButton(false);
+    if (!liked) {
+        setShowLikeButton(false);
+    }
   };
 
 
@@ -77,7 +79,7 @@ const Card = (props) => {
                     <p className="p5">{props.availability}</p>
                 </div>
             </div>
-            <p className="p7">{props.title} - {props.artist}</p>
+            <p className="p7"><span className='italics'>{props.title}</span> - {props.artist}</p>
         </div>
     </div>
   );

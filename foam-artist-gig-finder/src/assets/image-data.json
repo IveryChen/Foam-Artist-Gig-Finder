@@ -31,7 +31,7 @@
     },
     {
       "major": "Photography",
-      "location": "Providence",
+      "location": "New York",
       "availability": "Not Available",
       "image": "assets/img4.jpeg",
       "title": "Untitled",
@@ -41,7 +41,7 @@
     },
     {
       "major": "Illustration",
-      "location": "Providence",
+      "location": "Boston",
       "availability": "Available Now",
       "image": "assets/img5.jpeg",
       "title": "Ache the Good Ache",
@@ -61,7 +61,7 @@
     },
     {
       "major": "Painting",
-      "location": "Providence",
+      "location": "Boston",
       "availability": "Available Now",
       "image": "assets/img7.jpeg",
       "title": "Farmhouse",
@@ -71,7 +71,7 @@
     },
     {
       "major": "Furniture",
-      "location": "Providence",
+      "location": "New York",
       "availability": "Available Now",
       "image": "assets/img8.jpeg",
       "title": "Candles",
@@ -81,7 +81,7 @@
     },
     {
       "major": "Apparel",
-      "location": "Providence",
+      "location": "Los Angeles",
       "availability": "Available Now",
       "image": "assets/img9.jpeg",
       "title": "Sweater",
