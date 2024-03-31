@@ -6,6 +6,7 @@ import likedIcon from '../assets/liked_icon.png';
 const Card = (props) => {
 
   const [showLikeButton, setShowLikeButton] = useState(props.liked);
+  const [showCategories, setShowCategories] = useState(false);
 
   const handleImageLoad = (e) => {
     const img = e.target;
@@ -20,13 +21,13 @@ const Card = (props) => {
     }
   };
 
-//   TODO: if props.liked then you should always set showLikeButton to true
-
   const handleMouseEnter = () => {
     setShowLikeButton(true);
+    setShowCategories(true);
   };
 
   const handleMouseLeave = () => {
+    setShowCategories(false);
     if (!props.liked) {
         setShowLikeButton(false);
     }
@@ -41,23 +42,24 @@ const Card = (props) => {
                     <img src={props.liked ? likeIcon: likedIcon} alt="like icon" onClick={() => console.log('Liked!')}/>
                 </div>
             )}
-        </div>
-       
-        <div className="card-content">
-            <div className="categories">
+            {showCategories && <div className="categories">
                 <div className="category-frame">
-                    <p className="p5">{props.major}</p>
+                    <p className="category-text">{props.major}</p>
                 </div>
                 <div className="category-frame">
-                    <p className="p5">{props.location}</p>
+                    <p className="category-text">{props.location}</p>
                 </div>
                 <div className="category-frame">
-                    <p className="p5">{props.availability}</p>
+                    <p className="category-text">{props.availability}</p>
                 </div>
                 <div className="category-frame">
-                    <p className="p5">{props.price}</p>
+                    <p className="category-text">{props.price}</p>
                 </div>
             </div>
+            }
+        </div>
+       
+        <div className="card-content onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}">
             <p className="p7"><span className='italics'>{props.title}</span> - {props.artist}</p>
         </div>
     </div>

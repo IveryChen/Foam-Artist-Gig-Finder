@@ -61,7 +61,6 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
       )}
       {pageType === 'LikedPage' && (
         <>
-    
         <div className="return-button-container">
             <img src={ReturnIcon} onClick={handleReturnToMainClick} alt="return to main page" />
         </div>
