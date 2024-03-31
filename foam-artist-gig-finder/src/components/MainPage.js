@@ -26,8 +26,8 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleC
 
   return (
     <div className="main-page">
-        {likedItems.map((item)=>(
-        <p> {item.artist} {item.index} </p>))}
+        {/* {likedItems.map((item)=>(
+        <p> {item.artist} {item.index} </p>))} */}
 
         {filteredImageData.map((item, index) => ( 
             <Card

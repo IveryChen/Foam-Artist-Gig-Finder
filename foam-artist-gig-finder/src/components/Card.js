@@ -5,7 +5,7 @@ import likedIcon from '../assets/liked_icon.png';
 
 const Card = (props) => {
 
-  const [showLikeButton, setShowLikeButton] = useState(false);
+  const [showLikeButton, setShowLikeButton] = useState(props.liked);
 
   const handleImageLoad = (e) => {
     const img = e.target;
@@ -19,6 +19,8 @@ const Card = (props) => {
       parentDiv.style.height = '373px';
     }
   };
+
+//   TODO: if props.liked then you should always set showLikeButton to true
 
   const handleMouseEnter = () => {
     setShowLikeButton(true);
