@@ -5,11 +5,14 @@ import FilterBar from "./components/FilterBar.js"
 import TopBar from "./components/TopBar.js"
 import MainPage from "./components/MainPage.js"
 import PageWithFilter from "./components/PageWithFilter.js";
+import imageData from "./assets/image-data.json";
+
 
 function App() {
-  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useState(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
   const [cart, setCart] = useState([]);
   const [currentPage, setCurrentPage] = useState('MainPage');
+  const [modifiedImageData, setModifiedImageData] = useState([imageData]);
 
   const addToCart = (item) =>{
     setCart([...cart, item]);
@@ -38,9 +41,9 @@ function App() {
     setCurrentPage('MainPage');
   }
 
-  useEffect(() => {
-    setSelectedItems(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']); // Default selected items
-  }, []); 
+  // useEffect(() => {
+  //   setSelectedItems(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']); // Default selected items
+  // }, []); 
 
   return (
     <div className="App">
@@ -54,6 +57,9 @@ function App() {
         addToCart={addToCart}
         removeFromCart={removeFromCart}
         cart={cart}
+        imageData={imageData}
+        modifiedImageData={modifiedImageData}
+        setModifiedImageData={setModifiedImageData}
       />
     </div>
   );

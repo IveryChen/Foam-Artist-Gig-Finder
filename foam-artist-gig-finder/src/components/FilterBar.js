@@ -3,7 +3,7 @@ import FilterIcon from '../assets/filter_icon.png';
 import './style.css';
 
 
-const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
+const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData, modifiedImageData, setModifiedImageData}) => {
 
   const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [showMajorDropdown, setShowMajorDropdown] = useState(false);
@@ -13,6 +13,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
   const [sortingCriteria, setSortingCriteria] = useState('None');
 
 
+//   when sorting criteria is default, you just want to set setModifiedImageData(imageData);
   const toggleMajorDropdown = () => {
     setShowMajorDropdown(!showMajorDropdown);
   };
@@ -31,13 +32,14 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
 
   const resetSelection = () => {
     setIsClicked(true);
+    setSortingCriteria('None');
     setSelectedItems(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
   }
 
   const majorOptions = ['All Majors', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design"];
   const locationOptions = ['All Locations', 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago'];
   const availabilityOptions = ['All Availability', 'Available Now', 'Available Soon', 'Not Available'];
-
+  
   const handleMajorSelection = (option) => {
     // setShowMajorDropdown(false);
 
@@ -92,15 +94,26 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
     const handleSortSelection = (option) => {
         setSortingCriteria(option);
         setShowSortDropdown(false);
-    
+        
         if (option === 'Price') {
-          setSelectedItems([...selectedItems].sort((a, b) => a.price - b.price));
+          const sortedImageData = [...imageData];
+            sortedImageData.sort((a, b) => {
+                const priceA = a.price.length;
+                const priceB = b.price.length;
+                if (priceA < priceB) { return -1;}
+                if (priceA > priceB) { return 1; }
+                return 0; 
+          });
+
+          setModifiedImageData(sortedImageData);
+
         } else if (option === 'Artist Name') {
-          setSelectedItems([...selectedItems].sort((a, b) => a.artist.localeCompare(b.artist)));
+            const sortedImageData = [...imageData];
+            sortedImageData.sort((a, b) => a.artist.localeCompare(b.artist));
+            setModifiedImageData(sortedImageData);
+
         } else {
-          // If 'None' is selected, reset the sorting
-          // This assumes the original order of items is maintained
-          setSelectedItems([...selectedItems]);
+            setModifiedImageData(imageData);
         }
       };
 
@@ -182,7 +195,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
             <div className="button-frame" onClick={toggleSortDropdown}>
                     <div className="button-content">
                             <img src={FilterIcon} alt="filter"/>
-                            <p1>Price</p1>
+                            <p1>{sortingCriteria}</p1>
                     </div>
             </div>
             {showSortDropdown && (

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
-import imageData from "../assets/image-data.json";
   
-const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, setLikedItems, likedItems}) => {
+const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, setLikedItems, likedItems, setSelectedItems, imageData, modifiedImageData, setModifiedImageData}) => {
 
     const [images, setImages] = useState([]);
 
@@ -16,7 +15,15 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleC
       });
     }, []);
 
-    const filteredImageData = imageData.filter(item => {
+    useEffect(() => {
+        const allMajors = imageData.map(item => item.major);
+        const allLocations = imageData.map(item => item.location);
+        const allAvailabilities = imageData.map(item => item.availability);
+        setSelectedItems([...selectedItems, ...allMajors, ...allLocations, ...allAvailabilities]);
+        setModifiedImageData(imageData);
+      }, []);
+
+    const filteredImageData = modifiedImageData.filter(item => {
         return (
           selectedItems.includes(item.major) &&
           selectedItems.includes(item.location) &&
@@ -28,6 +35,7 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleC
     <div className="main-page">
         {/* {likedItems.map((item)=>(
         <p> {item.artist} {item.index} </p>))} */}
+
 
         {filteredImageData.map((item, index) => ( 
             <Card

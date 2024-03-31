@@ -6,7 +6,7 @@ import LikePage from './LikePage';
 import ReturnIcon from '../assets/return_icon.png';
 
 
-const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemClick, handleReturnToMainClick, addToCart, removeFromCart, cart}) => {
+const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemClick, handleReturnToMainClick, addToCart, removeFromCart, cart, imageData, modifiedImageData, setModifiedImageData}) => {
     const [likedItems, setLikedItems] = useState([]);
 
     const handleLike = (item) =>{
@@ -47,6 +47,9 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
             selectedItems={selectedItems}
             setSelectedItems={setSelectedItems}
             handleItemClick={handleItemClick}
+            imageData={imageData}
+            modifiedImageData={modifiedImageData}
+            setModifiedImageData={setModifiedImageData}
           />
           <MainPage 
             selectedItems={selectedItems} 
@@ -56,7 +59,11 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
             handleLike={handleLike}
             handleDoubleClick={handleDoubleClick} 
             setLikedItems={setLikedItems}
-            likedItems={likedItems}/>
+            likedItems={likedItems}
+            imageData={imageData}
+            setSelectedItems={setSelectedItems}
+            modifiedImageData={modifiedImageData}
+            setModifiedImageData={setModifiedImageData}/>
         </>
       )}
       {pageType === 'LikedPage' && (
@@ -69,6 +76,9 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
             selectedItems={selectedItems}
             setSelectedItems={setSelectedItems}
             handleItemClick={handleItemClick}
+            imageData={imageData}
+            modifiedImageData={modifiedImageData}
+            setModifiedImageData={setModifiedImageData}
         />
         <LikePage 
           selectedItems={selectedItems} 
@@ -78,7 +88,11 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
           handleLike={handleLike}
           handleDoubleClick={handleDoubleClick}
           setLikedItems={setLikedItems}
-          likedItems={likedItems}/>
+          likedItems={likedItems}
+          imageData={imageData}
+          setSelectedItems={setSelectedItems}
+          modifiedImageData={modifiedImageData}
+          setModifiedImageData={setModifiedImageData}/>
         </>
       )}
     </div>
