@@ -11,15 +11,6 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
     <div>
       {pageType === 'MainPage' && (
         <>
-        <div className="cart">
-        <h2>Cart</h2>
-        <ul>
-          {cart.map((item, index) => (
-            <li key={index}>{item.artist}</li>
-          ))}
-        </ul>
-      </div>
-
           <FilterBar
             selectedItems={selectedItems}
             setSelectedItems={setSelectedItems}
