@@ -7,7 +7,7 @@
       "title": "Untitled",
       "artist": "Harold Ancart",
       "index": 0,
-      "liked": false
+      "price": "$"
     },
     {
       "major": "Apparel",
@@ -17,7 +17,7 @@
       "title": "Skirt",
       "artist": "Bianca Smith",
       "index": 1,
-      "liked": false
+      "price": "$$"
     },
     {
       "major": "Illustration",
@@ -27,7 +27,7 @@
       "title": "People Walking",
       "artist": "Amy Bloom",
       "index": 2,
-      "liked": false
+      "price": "$"
     },
     {
       "major": "Photography",
@@ -37,7 +37,7 @@
       "title": "Untitled",
       "artist": "Hector Hawke",
       "index": 3,
-      "liked": false
+      "price": "$"
     },
     {
       "major": "Illustration",
@@ -47,7 +47,7 @@
       "title": "Ache the Good Ache",
       "artist": "Alasdair Wallace",
       "index": 4,
-      "liked": false
+      "price": "$"
     },
     {
       "major": "Furniture",
@@ -57,7 +57,7 @@
       "title": "LightBox",
       "artist": "Elliot Tank",
       "index": 5,
-      "liked": false
+      "price": "$$"
     },
     {
       "major": "Painting",
@@ -67,7 +67,7 @@
       "title": "Farmhouse",
       "artist": "Damien Jackson",
       "index": 6,
-      "liked": false
+      "price": "$$"
     },
     {
       "major": "Furniture",
@@ -77,7 +77,7 @@
       "title": "Candles",
       "artist": "Nicholas Devlin",
       "index": 7,
-      "liked": false
+      "price": "$$"
     },
     {
       "major": "Apparel",
@@ -87,7 +87,7 @@
       "title": "Sweater",
       "artist": "Floria Chen",
       "index": 8,
-      "liked": false
+      "price": "$"
     },
     {
       "major": "Sculpture",
@@ -97,7 +97,7 @@
       "title": "Light",
       "artist": "Aaron McRandy",
       "index": 9,
-      "liked": false
+      "price": "$$"
     },
     {
       "major": "Painting",
@@ -107,7 +107,7 @@
       "title": "Midnight Grocery",
       "artist": "Danny Lai Lai",
       "index": 10,
-      "liked": false
+      "price": "$$"
     },
     {
       "major": "Furniture",
@@ -117,7 +117,7 @@
       "title": "Shoes",
       "artist": "Rebecca Showman",
       "index": 11,
-      "liked": false
+      "price": "$$$"
     },
     {
       "major": "Jewelry",
@@ -127,7 +127,7 @@
       "title": "Home Goods",
       "artist": "Caitlin Mociun",
       "index": 12,
-      "liked": false
+      "price": "$$"
     }
   ]
   

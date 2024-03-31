@@ -6,31 +6,6 @@ import likedIcon from '../assets/liked_icon.png';
 const Card = (props) => {
 
   const [showLikeButton, setShowLikeButton] = useState(false);
-  const [liked, setLiked] = useState(props.item.liked);
-
-  const handleLike = () =>{
-    const newLikedState = !liked;
-    setLiked(newLikedState);
-
-    if (newLikedState) {
-      props.addToCart({ ...props.item, liked: true });
-    }
-    else{
-      props.removeFromCart(props.item.index);
-    }
-  };
-
-  const handleDoubleClick = () => {
-    const newLikedState = !liked;
-    setLiked(newLikedState);
-
-    if (newLikedState) {
-      props.addToCart({ ...props.item, liked: true });
-    }
-    else{
-        props.removeFromCart(props.item.index);
-    }
-  };
 
   const handleImageLoad = (e) => {
     const img = e.target;
@@ -50,19 +25,18 @@ const Card = (props) => {
   };
 
   const handleMouseLeave = () => {
-    if (!liked) {
+    if (!props.liked) {
         setShowLikeButton(false);
     }
   };
 
-
   return (
     <div className="card" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <div className="rounded-image" onDoubleClick={handleDoubleClick}>
+        <div className="rounded-image" onDoubleClick={props.handleDoubleClick}>
             <img src={props.image} alt="img1" onLoad={handleImageLoad}/>
             {showLikeButton && (
-                <div className="like-button" onClick={handleLike}>
-                    <img src={liked ? likeIcon: likedIcon} alt="like icon" onClick={() => console.log('Liked!')}/>
+                <div className="like-button" onClick={props.handleLike}>
+                    <img src={props.liked ? likeIcon: likedIcon} alt="like icon" onClick={() => console.log('Liked!')}/>
                 </div>
             )}
         </div>
@@ -77,6 +51,9 @@ const Card = (props) => {
                 </div>
                 <div className="category-frame">
                     <p className="p5">{props.availability}</p>
+                </div>
+                <div className="category-frame">
+                    <p className="p5">{props.price}</p>
                 </div>
             </div>
             <p className="p7"><span className='italics'>{props.title}</span> - {props.artist}</p>

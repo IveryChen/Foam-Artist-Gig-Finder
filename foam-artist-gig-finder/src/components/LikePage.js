@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import imageData from "../assets/image-data.json";
   
-const LikePage = ({selectedItems, addToCart, cart, removeFromCart}) => {
+const LikePage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, likedItems, setLikedItems}) => {
 
     const [images, setImages] = useState([]);
 
@@ -37,6 +37,11 @@ const LikePage = ({selectedItems, addToCart, cart, removeFromCart}) => {
             title={item.title}
             artist={item.artist}
             image={images[item.index]}
+            setLikedItems={setLikedItems}
+            likedItems={likedItems}
+            liked={likedItems.some(likedItem => likedItem.index === item.index)}
+            handleLike={() => handleLike(item)}
+            handleDoubleClick={() => handleDoubleClick(item)}
             addToCart={addToCart}
             removeFromCart={removeFromCart}
             />

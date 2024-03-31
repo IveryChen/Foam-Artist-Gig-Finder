@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import imageData from "../assets/image-data.json";
   
-const MainPage = ({selectedItems, addToCart, cart, removeFromCart}) => {
+const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, setLikedItems, likedItems}) => {
 
     const [images, setImages] = useState([]);
 
@@ -24,10 +24,11 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart}) => {
         );
     });
 
-    console.log(filteredImageData);
-
   return (
     <div className="main-page">
+        {likedItems.map((item)=>(
+        <p> {item.artist} {item.index} </p>))}
+
         {filteredImageData.map((item, index) => ( 
             <Card
             item={item}
@@ -37,6 +38,12 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart}) => {
             title={item.title}
             artist={item.artist}
             image={images[item.index]}
+            price={item.price}
+            setLikedItems={setLikedItems}
+            likedItems={likedItems}
+            liked={likedItems.some(likedItem => likedItem.index === item.index)}
+            handleLike={() => handleLike(item)}
+            handleDoubleClick={() => handleDoubleClick(item)}
             addToCart={addToCart}
             removeFromCart={removeFromCart}
             />

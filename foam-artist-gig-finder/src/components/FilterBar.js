@@ -5,10 +5,12 @@ import './style.css';
 
 const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
 
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [showMajorDropdown, setShowMajorDropdown] = useState(false);
   const [showLocationDropdown, setShowLocationDropdown] = useState(false);
   const [showAvailabilityDropdown, setShowAvailabilityDropdown] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [sortingCriteria, setSortingCriteria] = useState('None');
 
 
   const toggleMajorDropdown = () => {
@@ -23,6 +25,10 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
     setShowAvailabilityDropdown(!showAvailabilityDropdown);
   };
 
+  const toggleSortDropdown = () => {
+    setShowSortDropdown(!showSortDropdown);
+  }
+
   const resetSelection = () => {
     setIsClicked(true);
     setSelectedItems(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
@@ -33,6 +39,8 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
   const availabilityOptions = ['All Availability', 'Available Now', 'Available Soon', 'Not Available'];
 
   const handleMajorSelection = (option) => {
+    // setShowMajorDropdown(false);
+
     if (option === 'All Majors') {
       if (!selectedItems.includes('All Majors')) {
         setSelectedItems([...selectedItems, ...majorOptions]);
@@ -48,6 +56,8 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
   };
 
   const handleLocationSelection = (option) => {
+    // setShowLocationDropdown(false);
+
     if (option === 'All Locations') {
         if (!selectedItems.includes('All Locations')) {
             setSelectedItems([...selectedItems, ...locationOptions]);
@@ -63,6 +73,8 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
     };
 
   const handleAvailabilitySelection = (option) => {
+    // setShowAvailabilityDropdown(false);
+
     if (option === 'All Availability') {
         if (!selectedItems.includes('All Availability')) {
           setSelectedItems([...selectedItems, ...availabilityOptions]);
@@ -76,6 +88,21 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
         setSelectedItems(updatedSelection);
       }  
     };
+
+    const handleSortSelection = (option) => {
+        setSortingCriteria(option);
+        setShowSortDropdown(false);
+    
+        if (option === 'Price') {
+          setSelectedItems([...selectedItems].sort((a, b) => a.price - b.price));
+        } else if (option === 'Artist Name') {
+          setSelectedItems([...selectedItems].sort((a, b) => a.artist.localeCompare(b.artist)));
+        } else {
+          // If 'None' is selected, reset the sorting
+          // This assumes the original order of items is maintained
+          setSelectedItems([...selectedItems]);
+        }
+      };
 
   return (
     <div className="filter-bar">
@@ -127,8 +154,6 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
             )}
         </div>
 
-
-       <p1 className="grey-text">Sort By</p1>
        <div className="dropdown-container">
             <div className="button-frame" onClick={toggleAvailabilityDropdown}>
                     <div className="button-content">
@@ -144,6 +169,30 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick }) => {
                     type="checkbox"
                     checked={selectedItems.includes(option)}
                     onChange={() => handleAvailabilitySelection(option)}
+                    />
+                    {option}
+                    </label>
+                    ))}
+                </div>
+            )}
+       </div>
+
+       <p1 className="grey-text">Sort By</p1>
+       <div className="dropdown-container">
+            <div className="button-frame" onClick={toggleSortDropdown}>
+                    <div className="button-content">
+                            <img src={FilterIcon} alt="filter"/>
+                            <p1>Price</p1>
+                    </div>
+            </div>
+            {showSortDropdown && (
+                <div className="dropdown-menu">
+                    {['None', 'Price', 'Artist Name'].map((option) => (
+                    <label key={option}>
+                    <input
+                    type="checkbox"
+                    checked={sortingCriteria === option}
+                    onChange={() => handleSortSelection(option)}
                     />
                     {option}
                     </label>
