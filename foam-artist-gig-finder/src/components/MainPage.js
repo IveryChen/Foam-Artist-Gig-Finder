@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Card from './Card';
 
 const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, setLikedItems, likedItems, setSelectedItems, imageData, modifiedImageData, setModifiedImageData, images, setImages}) => {
