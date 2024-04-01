@@ -9,20 +9,22 @@
         <script src="script.js"></script>
         <meta name="author" content="Ivery Chen">
         <meta name="viewprt" content="width=device-width, initial-scale=1.0"/>
-        <title> A/B Testing </title>
+        <title> Development </title>
     </head>
     <body>
         <div class="all-contents">
             
-            <div id="main-body">
+            <div class="main-body">
 
                 <div class="section">
                     <p class="heading">Development</p>
-                    <p class="text"> For this development site, I chose three sites that have filtering, aggregator and sorting functionality and compared factors they offer to inform my design for a similar site. I chose three sites that I use frequently, Depop, Pinterest and Google Maps. They all offer different ways to like and save liked posts, and in the process I was surprised to find that such analysis would influence my design decisions. 
+                    <p class="text"> For this assignment, I chose three websites that have filtering, aggregator and sorting functionality, analysed them, and used the results to inform my own site.
 
                     </p>
                     <h2 class="subheading">Part 1: Competitive Analysis  </h2>
-                    <p class="text">For each site, I compared and analysed different factors and functionality they offer.
+                    <p class="text">
+                        I chose three sites that I use frequently, <span class="definition">Depop</span>, <span class="definition">Pinterest</span> and <span class="definition">Google Maps</span>, which all offer different ways to like and save liked posts. 
+                        For each site, I found and compared different factors.
 
                     <div class="table-container">
                         <table class="table">
@@ -114,11 +116,11 @@
                         <div class="container">
                             <div class="subheading3">Pinterest</div>
                             <p class="text">
-                                <span class="mini-heading">Most successful factor: </span> Save to Custom Lists - The ability to save to custom lists when one likes an item is powerful, it allows categorisation by users and allows more freedom when it comes to liking items. For example, users can create a list called “books to read” and “clothes to wear”. 
+                                <span class="mini-heading">Most successful factor: </span> Save to Custom Lists - The ability to save to custom lists allows categorisation by users. For example, users can create a list called “books to read” and “clothes to wear”. 
+
                             </p>
                             <p class="text">
-                                <span class="mini-heading">Least successful factor: </span>  Auto Select List to Save to - This functionality is annoying, smart-selecting the list user might want to put something in is in theory useful, but the number of times they get it wrong is irritating and leads to the user having to go out of their way into the wrong list, remove the wrong item, then come back and pinning the same item to the correct list again.
-
+                                <span class="mini-heading">Least successful factor: </span>  Auto Select List to Save to - smart-selecting the list user might want to put something in is in theory useful, but oftentimes leads to frustration when it selects the wrong thing.
                             </p>
                         </div>
                     </div>
@@ -127,32 +129,20 @@
                         <div class="container">
                             <div class="subheading3">Google Maps</div>
                             <p class="text">
-                                <span class="mini-heading">Sort List of Favourites - this is very useful as users now have the control over their saved items. They can sort based on distances and prices. 
+                                <span class="mini-heading">Sort List of Favourites: </span> This is very useful as users now have the control over their saved items. They can sort based on distances and prices. 
                             </p>
                             <p class="text">
-                                <span class="mini-heading">Least successful factor: </span>  Add Notes to Favourited Item - I personally found it to be unnecessary as I did not use the functionality even once, although I could see how someone else might want to use it as a reminder to why they saved a certain item. For me it clutters up the list with the “add note” button.
+                                <span class="mini-heading">Least successful factor: </span>  Add Notes to Favourited Item - I personally found it to be unnecessary as I did not use the functionality even once. For me it clutters up the list with the “add note” button.
                             </p>
                         </div>
                     </div>
-
-                    
-                    <!-- <div class="neighbour-image-container">
-                        <div class="image-caption">
-                            <img src="./assets/A.png" alt="screenshot of page A">
-                            <p class="text">screenshot of page A </p>
-                        </div>
-                        <div class="image-caption">
-                            <img src="./assets/B.png" alt="screenshot of page B">
-                            <p class="text">screenshot of page B </p>
-                        </div>
-                    </div> -->
 
                 </div>
 
                 <div class="section">
                     <h2 class="subheading">Part 2: Functionality</h2>
 
-                    <p class="questions">Based on what worked well and didn’t, I would like to design an interface that contains a list of features that did work well:
+                    <p class="questions">Based on previous analysis, I want to include the following in my design
                     </p>
                     <ul>
                         <li class="text"> “Like” button </li>
@@ -164,8 +154,14 @@
 
 
                     <p class="text">
-                        The idea I came up with is inspired by my experience as a student at RISD. I constantly get asked questions such as  “do you know a voice actor for $50”, “do you know someone who can remove an arm in VFX”, “do you know a Graphic designer for a concert campaign”. The problem is that as someone with a gig, people usually turn to instagram instead of Fiver or Craiglists, because Instagram has a network effect and one is more likely to find someone with mutual connections and are local. I decided to make a site that isn’t filled with gig posts but rather works of real students. The interface is similar to Pinterest, except for most Pinterest work, it is impossible to trace back to the original artist for their work (pins are saved many many times), while for FOAM, one can save a list called “Ceramics” and be able to contact the real artist. In short, FOAM is a Pinterest-like portfolio site for art school students, a local-artist discovery site for clients to keep track of their favourite artists. In this way, clients don’t have to go through tons of applications and instead always have the ability to message artists they like, without having to go through Instagram!
+                        FOAM is a Pinterest-like portfolio site for art students, a local-artist discovery site for clients to keep track of their favourite local artists. 
                     </p>
+
+                    <p class="text">
+                        As a RISD student, I constantly get asked, </p>
+                    <span class="definition2">“Do you know a Graphic designer for a concert campaign?”</span> 
+                    <p class="text">The interface is similar to Pinterest, but it differs in that you can get in touch with real artists behind the work.</p>
+                   
 
                     <div class="container-container">
                         <div class="container">
@@ -185,30 +181,61 @@
                         </div>
                     </div>
 
-                    <p className="text">I will be using filter to filter by Major, Location and whether a user is Open to commission. Similarly, I will be using a sorting feature to sort the users by Price. Lastly, aggregation will be used to add favorites to a gallery (there will be custom lists as well)
+                    <p class="text">I will be using filter to filter by Major, Location and Availability. Similarly, I will be sorting by Price and Artist Name. Lastly, aggregation will be used to add favorites to a gallery.
                     </p>
 
                 </div>
 
                 <div class="section">
                     <h2 class="subheading">Part 3: Figma Prototype</h2>
+
+                    <p class="text">Next, I created mockups for the Landing and Favourites page in Figma to help with the design process.
+                    </p>
+
                     <div class="neighbour-image-container">
                         <div class="image-caption">
-                            <img src="./assets/A.png" alt="screenshot of page A">
-                            <p class="text">screenshot of page A </p>
+                            <img src="./src/assets/Landing.png" alt="Figma Prototype of Landing Page">
+                            <p class="text">Figma Prototype of Landing Page </p>
                         </div>
                         <div class="image-caption">
-                            <img src="./assets/B.png" alt="screenshot of page B">
-                            <p class="text">screenshot of page B </p>
+                            <img src="./src/assets/Favourites.png" alt="Figma Prototype of Favourites Page">
+                            <p class="text">Figma Prototype of Favourites Page</p>
                         </div>
                     </div>
                 </div>
 
 
                 <div class="section">
-                    <h2 class="subheading">Part 4: Deployed Site</h2>
+                    <h2 class="subheading">Part 4: <a class="link" href="https://foam-phi.vercel.app/">Foam</a></h2>
+
+                    <p class="text"> I implemented all the target filter, aggregation and sort functions. All filters appear as drop down menus. I also created a 'select all' checkbox for most menus for easy selection of multiple categories. 
+                    </p>
+
+                    <p class="text"> As an addition, I created a notification popup animation when a liked item is added. It contains the image of the selected item.
+                    </p>
+
+                    <p class="text"> One surprising challenge is displaying image as landscape or horizontal, and making sure all empty gaps are filled in. To do this, I used column-gap instead of flexbox.
+                    </p>
+
+                    <div class="image-container">
+                        <div class="image-caption">
+                            <img src="./src/assets/FoamLanding.png" alt="Deployed Landing Page showing Notification popup">
+                            <p class="text">Deployed Landing Page showing Notification popup</p>
+                        </div>
+                        <div class="image-caption">
+                            <img src="./src/assets/FoamLandingExpanded.png" alt="Deployed Landing Page with Filters expanded">
+                            <p class="text">Deployed Landing Page with Filters expanded</p>
+                        </div>
+                        <div class="image-caption">
+                            <img src="./src/assets/FoamFavourites.png" alt="Deployed Favourites Page">
+                            <p class="text">Deployed Favourites Page</p>
+                        </div>
+                    </div>
 
                 </div>
+
+            </div>
+            <p class="subtext"> developed by Ivery Chen April 2024</p>
 
             </div>
 
