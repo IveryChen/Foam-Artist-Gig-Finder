@@ -13,11 +13,11 @@ const Card = (props) => {
     const parentDiv = img.parentElement.parentElement;
     
     if (img.naturalWidth < img.naturalHeight) {
-      parentDiv.style.width = '386px';
-      parentDiv.style.height = '673px';
+      parentDiv.style.width = '286px';
+      parentDiv.style.height = '473px';
     } else {
-      parentDiv.style.width = '386px';
-      parentDiv.style.height = '373px';
+      parentDiv.style.width = '286px';
+      parentDiv.style.height = '273px';
     }
   };
 
@@ -34,7 +34,7 @@ const Card = (props) => {
   };
 
   return (
-    <div className="card" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className="card-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <div className="rounded-image" onDoubleClick={props.handleDoubleClick}>
             <img src={props.image} alt="img1" onLoad={handleImageLoad}/>
             {showLikeButton && (

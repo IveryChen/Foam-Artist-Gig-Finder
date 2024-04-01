@@ -5,7 +5,6 @@ import TopBar from "./components/TopBar.js"
 import PageWithFilter from "./components/PageWithFilter.js";
 import Alert from "./components/Alert.js";
 import imageData from "./assets/image-data.json";
-import likedIcon from './assets/liked_icon.png';
 
 function App() {
   const [selectedItems, setSelectedItems] = useState(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);

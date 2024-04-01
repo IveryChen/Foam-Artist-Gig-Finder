@@ -9,7 +9,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
   const [showMajorDropdown, setShowMajorDropdown] = useState(false);
   const [showLocationDropdown, setShowLocationDropdown] = useState(false);
   const [showAvailabilityDropdown, setShowAvailabilityDropdown] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+//   const [isClicked, setIsClicked] = useState(false);
   const [sortingCriteria, setSortingCriteria] = useState('None');
 
   const toggleMajorDropdown = () => {
@@ -29,7 +29,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
   }
 
   const resetSelection = () => {
-    setIsClicked(true);
+    // setIsClicked(true);
     setSortingCriteria('None');
     setSelectedItems(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
   }
@@ -123,7 +123,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
             <div className="button-frame" onClick={toggleMajorDropdown}>
                     <div className="button-content">
                             <img src={FilterIcon} alt="filter"/>
-                            <p1>Major</p1>
+                            <p1 className='filter-text'>Major</p1>
                     </div>
             </div>
             {showMajorDropdown && (
@@ -146,7 +146,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
             <div className="button-frame" onClick={toggleLocationDropdown}>
                     <div className="button-content">
                             <img src={FilterIcon} alt="filter"/>
-                            <p1>Location</p1>
+                            <p1 className='filter-text'>Location</p1>
                     </div>
             </div>
             {showLocationDropdown && (
@@ -169,7 +169,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
             <div className="button-frame" onClick={toggleAvailabilityDropdown}>
                     <div className="button-content">
                             <img src={FilterIcon} alt="filter"/>
-                            <p1>Availability</p1>
+                            <p1 className='filter-text'>Availability</p1>
                     </div>
             </div>
             {showAvailabilityDropdown && (
@@ -193,7 +193,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
             <div className="button-frame" onClick={toggleSortDropdown}>
                     <div className="button-content">
                             <img src={FilterIcon} alt="filter"/>
-                            <p1>{sortingCriteria}</p1>
+                            <p1 className='filter-text'>{sortingCriteria}</p1>
                     </div>
             </div>
             {showSortDropdown && (
