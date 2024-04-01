@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FilterIcon from '../assets/filter_icon.png';
 import './style.css';
 
@@ -34,6 +34,7 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
     setSelectedItems(['All Majors', 'All Locations', 'All Availability', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design", 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago', 'Available Now', 'Available Soon', 'Not Available']);
   }
 
+  // TODO: Can clean this up as well as allMajors etc inside MainPage, bring them all to App
   const majorOptions = ['All Majors', 'FAV', 'Ceramics', 'Illustration','Painting', 'Sculpture', 'Jewelry', "Apparel", "Furniture", "PrintMaking", "Graphic Design", "Industrial Design"];
   const locationOptions = ['All Locations', 'Providence',  'Boston', "Los Angeles", 'New York',  'Chicago'];
   const availabilityOptions = ['All Availability', 'Available Now', 'Available Soon', 'Not Available'];
@@ -89,31 +90,31 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
       }  
     };
 
-    const handleSortSelection = (option) => {
-        setSortingCriteria(option);
-        setShowSortDropdown(false);
-        
-        if (option === 'Price') {
+  const handleSortSelection = (option) => {
+      setSortingCriteria(option);
+      setShowSortDropdown(false);
+  };
+  
+  useEffect(() => {
+      if (sortingCriteria === 'Price') {
           const sortedImageData = [...imageData];
-            sortedImageData.sort((a, b) => {
-                const priceA = a.price.length;
-                const priceB = b.price.length;
-                if (priceA < priceB) { return -1;}
-                if (priceA > priceB) { return 1; }
-                return 0; 
+          sortedImageData.sort((a, b) => {
+              const priceA = a.price.length;
+              const priceB = b.price.length;
+              if (priceA < priceB) { return -1; }
+              if (priceA > priceB) { return 1; }
+              return 0;
           });
-
           setModifiedImageData(sortedImageData);
-
-        } else if (option === 'Artist Name') {
-            const sortedImageData = [...imageData];
-            sortedImageData.sort((a, b) => a.artist.localeCompare(b.artist));
-            setModifiedImageData(sortedImageData);
-
-        } else {
-            setModifiedImageData(imageData);
-        }
-      };
+      } else if (sortingCriteria === 'Artist Name') {
+          const sortedImageData = [...imageData];
+          sortedImageData.sort((a, b) => a.artist.localeCompare(b.artist));
+          setModifiedImageData(sortedImageData);
+      } else {
+          setModifiedImageData(imageData);
+      }
+  }, [sortingCriteria, imageData]);
+  
 
   return (
     <div className="filter-bar">

@@ -7,6 +7,7 @@ import ReturnIcon from '../assets/return_icon.png';
 
 
 const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemClick, handleReturnToMainClick, addToCart, removeFromCart, cart, imageData, modifiedImageData, setModifiedImageData, likedItems, setLikedItems, images, setImages}) => {
+    var likedItemsLength = likedItems.length;
 
     const handleLike = (item) =>{
         const likedState = likedItems.some(likedItem => likedItem.index === item.index) || false;
@@ -73,6 +74,8 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
             <img src={ReturnIcon} onClick={handleReturnToMainClick} alt="return to main page" />
         </div>
         <p className="heading">Favourites</p>
+        <p className="count-text">{likedItemsLength} liked</p>
+
         <FilterBar
             selectedItems={selectedItems}
             setSelectedItems={setSelectedItems}

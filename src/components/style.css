@@ -48,6 +48,16 @@
     font-weight: bold;
   }
 
+  .count-text{
+    font-size: 22px;
+    font-weight:400;
+  }
+
+  .count-text-bold{
+    font-size: 22px;
+    font-weight: 400;
+  }
+
  .top-bar{
     display: flex;
     justify-content: space-between;
