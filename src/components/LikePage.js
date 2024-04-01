@@ -47,6 +47,7 @@ const LikePage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleC
             title={item.title}
             artist={item.artist}
             image={images[item.index]}
+            price={item.price}
             setLikedItems={setLikedItems}
             likedItems={likedItems}
             liked={likedItems.some(likedItem => likedItem.index === item.index)}
