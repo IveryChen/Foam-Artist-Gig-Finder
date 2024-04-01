@@ -12,8 +12,6 @@ const FilterBar = ({ selectedItems, setSelectedItems, handleItemClick, imageData
   const [isClicked, setIsClicked] = useState(false);
   const [sortingCriteria, setSortingCriteria] = useState('None');
 
-
-//   when sorting criteria is default, you just want to set setModifiedImageData(imageData);
   const toggleMajorDropdown = () => {
     setShowMajorDropdown(!showMajorDropdown);
   };

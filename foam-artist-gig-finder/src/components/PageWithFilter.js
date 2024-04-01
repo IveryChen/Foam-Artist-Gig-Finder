@@ -1,13 +1,12 @@
 // Higher-order component (HOC)
-import React, { useState } from 'react';
+import React from 'react';
 import FilterBar from './FilterBar';
 import MainPage from './MainPage';
 import LikePage from './LikePage';
 import ReturnIcon from '../assets/return_icon.png';
 
 
-const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemClick, handleReturnToMainClick, addToCart, removeFromCart, cart, imageData, modifiedImageData, setModifiedImageData}) => {
-    const [likedItems, setLikedItems] = useState([]);
+const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemClick, handleReturnToMainClick, addToCart, removeFromCart, cart, imageData, modifiedImageData, setModifiedImageData, likedItems, setLikedItems, images, setImages}) => {
 
     const handleLike = (item) =>{
         const likedState = likedItems.some(likedItem => likedItem.index === item.index) || false;
@@ -63,7 +62,9 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
             imageData={imageData}
             setSelectedItems={setSelectedItems}
             modifiedImageData={modifiedImageData}
-            setModifiedImageData={setModifiedImageData}/>
+            setModifiedImageData={setModifiedImageData}
+            images={images}
+            setImages={setImages}/>
         </>
       )}
       {pageType === 'LikedPage' && (
@@ -92,7 +93,9 @@ const PageWithFilter = ({pageType, selectedItems, setSelectedItems, handleItemCl
           imageData={imageData}
           setSelectedItems={setSelectedItems}
           modifiedImageData={modifiedImageData}
-          setModifiedImageData={setModifiedImageData}/>
+          setModifiedImageData={setModifiedImageData}
+          images={images}
+          setImages={setImages}/>
         </>
       )}
     </div>

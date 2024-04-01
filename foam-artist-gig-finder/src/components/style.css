@@ -18,6 +18,17 @@
     color: black; 
   }
 
+  .alert-text{
+    width: 100px;
+    color: white;
+  }
+
+  .alert-text-bold{
+    width: 100px;
+    font-weight:bold;
+    color: white;
+  }
+
   .category-text{
     font-size: 12px;
   }
@@ -177,7 +188,7 @@
     border-radius: 12px;
     overflow: hidden;
     padding: 10px;
-    margin: 20px;
+    margin: 5px 10px;
     display:flex;
     flex-direction: column;
   }
@@ -203,7 +214,7 @@
 
   .like-button img{
     width: 60px;
-    height:60px;
+    height: 60px;
   }
 
   .card-content{
@@ -310,4 +321,45 @@ input[type="checkbox"]:checked::before {
 .return-button-container img:hover{
     opacity: 0.5;
 }
+
+@keyframes slideAndFadeOut {
+    0% {
+        opacity: 1;
+        top: 90vh;
+    }
+    90% {
+        opacity: 1;
+        top: 90vh;
+    }
+    100% {
+        opacity: 0;
+        top: 85vh; 
+    }
+}
+
+.alert-container{
+    position: fixed;
+    z-index:1;
+    top: 90vh;
+    left: 43vw;
+    width:250px;
+    height:80px;
+    opacity:1;
+    background-color: rgb(44, 43, 43);
+    border-radius: 30px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: slideAndFadeOut 2s ease forwards;
+}
+
+.alert-container img{
+    width: 50px;
+    height: 50px;
+}
+
+.preview-image{
+    border-radius: 10px;
+}
+
 

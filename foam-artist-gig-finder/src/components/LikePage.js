@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import imageData from "../assets/image-data.json";
   
-const LikePage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, likedItems, setLikedItems,  imageData, setSelectedItems, modifiedImageData, setModifiedImageData}) => {
+const LikePage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, likedItems, setLikedItems,  imageData, setSelectedItems, modifiedImageData, setModifiedImageData, images, setImages}) => {
 
-    const [images, setImages] = useState([]);
+    // const [images, setImages] = useState([]);
 
     useEffect(() => {
       const importedImages = imageData.map(item => {

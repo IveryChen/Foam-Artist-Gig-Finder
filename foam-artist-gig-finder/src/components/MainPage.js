@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
-  
-const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, setLikedItems, likedItems, setSelectedItems, imageData, modifiedImageData, setModifiedImageData}) => {
 
-    const [images, setImages] = useState([]);
+const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleClick, handleLike, setLikedItems, likedItems, setSelectedItems, imageData, modifiedImageData, setModifiedImageData, images, setImages}) => {
 
     useEffect(() => {
-      const importedImages = imageData.map(item => {
-        return import(`../${item.image}`).then(module => module.default);
-      });
-  
-      Promise.all(importedImages).then(images => {
-        setImages(images);
-      });
-    }, []);
+        const importedImages = imageData.map(item => {
+          return import(`../${item.image}`).then(module => module.default);
+        });
+    
+        Promise.all(importedImages).then(images => {
+          setImages(images);
+        });
+      }, []);
 
     useEffect(() => {
         const allMajors = imageData.map(item => item.major);
@@ -35,7 +33,6 @@ const MainPage = ({selectedItems, addToCart, cart, removeFromCart, handleDoubleC
     <div className="main-page">
         {/* {likedItems.map((item)=>(
         <p> {item.artist} {item.index} </p>))} */}
-
 
         {filteredImageData.map((item, index) => ( 
             <Card
