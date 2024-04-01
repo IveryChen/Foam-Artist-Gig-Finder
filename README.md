@@ -1,7 +1,7 @@
 ## Link to my deployed React app
 https://foam-artist-gig-finder.vercel.app/
 
-## TO Run
+## To Run App locally
 
 In the project directory, you can run:
 
