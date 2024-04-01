@@ -1,7 +1,7 @@
-# Link to my deployed React app
+## Link to my deployed React app
 https://foam-artist-gig-finder.vercel.app/
 
-## Available Scripts
+## TO Run
 
 In the project directory, you can run:
 
