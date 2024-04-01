@@ -1,4 +1,4 @@
-## Link to my deployed React app
+## Link to deployed React app
 https://foam-artist-gig-finder.vercel.app/
 
 ## To Run App locally
