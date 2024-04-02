@@ -184,7 +184,7 @@
     }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 580px) {
     .main-page {
         column-count: 1; 
     }
